@@ -24,6 +24,17 @@ int fibonacciDP(vector<int> &dp)
     return dp[dp.size()-1];
 }
 
+int fibonacciIterative(int n)
+{
+    int prev = 0, curr = 1;
+    for(int i = 2; i <= n; i++)
+    {
+        int result = prev + curr;
+        prev = curr;
+        curr = result;
+    }
+    return curr;
+}
 int main()
 {
     int n;
@@ -33,6 +44,7 @@ int main()
     vector<int> dp(n + 1, 0);
     dp[1] = 1;
     cout<<"Fibonacci number at position "<<n<<" is: "<<fibonacciMemoization(nums, n)<<endl;
-    cout<<"Fibonacci number at position "<<n<<" is: "<<fibonacciDP(dp);
+    cout<<"Fibonacci number at position "<<n<<" is: "<<fibonacciDP(dp)<<endl;
+    cout<<"Fibonacci number at position "<<n<<" is: "<<fibonacciIterative(n);
     return 0;
 }
