@@ -3,7 +3,7 @@ using namespace std;
 
 int uniquePathsRecursive(int m, int n)
 {
-    if(m == 0 || n == 0)
+    if(m == 0 && n == 0)
     {
         return 1;
     }
@@ -24,7 +24,7 @@ int uniquePathsMemoization(int m, int n)
 
 int uniquePathsMemoizationHelper(int m, int n, vector<vector<int>>& dp)
 {
-    if(m == 0 || n == 0)
+    if(m == 0 && n == 0)
     {
         return 1;
     }
